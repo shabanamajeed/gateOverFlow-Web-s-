@@ -1,8 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item android:id="@+id/aktualisieren" android:title="Update"></item>
+    <item android:id="@+id/update" android:title="Update"></item>
     <item android:id="@+id/home" android:title="Home"></item>
-    <item android:id="@+id/service" android:title="Questions"></item>
-    <item android:id="@+id/impressum" android:title="QA"></item>
+    <item android:id="@+id/questions" android:title="Recent Questions"></item>
+    <item android:id="@+id/qa" android:title="Recent QA"></item>
+    <item android:id="@+id/activity" android:title="Recent Activity"></item>
+    <item android:id="@+id/previous" android:title="Previous Year Questions"></item>
+    <item android:id="@+id/topics" android:title="GATE topics"></item>
+    <item android:id="@+id/setting" android:title="Settings"></item>
 
 </menu>

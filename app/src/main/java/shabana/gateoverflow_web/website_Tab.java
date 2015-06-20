@@ -76,19 +76,38 @@ public class website_Tab extends Activity {
         // Handle item selection
         WebView wv1 = (WebView)findViewById(R.id.webView1);
         switch (item.getItemId()) {
-            case R.id.aktualisieren:
+            case R.id.update:
                 wv1.reload();
                 Log.d(DEBUG_TAG, "WebView Reload");
                 return true;
-            case R.id.impressum:
+            case R.id.questions:
                 wv1.loadUrl(url_Details.getQuestions());
                 Log.d(DEBUG_TAG, "WebView Lade: http://gateoverflow.in/questions");
                 return true;
-            case R.id.home:
+            case R.id.qa:
                 wv1.loadUrl(url_Details.getQa());
                 Log.d(DEBUG_TAG, "WebView Lade: http://gateoverflow.in/qa");
                 return true;
-            case R.id.service:
+            case R.id.activity:
+                wv1.loadUrl(url_Details.getActivity());
+                Log.d(DEBUG_TAG, "WebView Lade: http://gateoverflow.in/activity");
+                return true;
+            case R.id.previous:
+                wv1.loadUrl(url_Details.getPrev_years());
+                Log.d(DEBUG_TAG, "WebView Lade: http://gateoverflow.in/previous-years");
+                return true;
+            case R.id.topics:
+                wv1.loadUrl(url_Details.getTopics());
+                Log.d(DEBUG_TAG, "WebView Lade: http://gateoverflow.in/tags");
+                return true;
+
+
+            case R.id.home:
+                wv1.loadUrl(url_Details.getMain_Page());
+                Log.d(DEBUG_TAG, "WebView Lade: http://gateoverflow.in");
+                return true;
+            case R.id.setting:
+           // case R.id.service:
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(website_Tab.this);
                 SharedPreferences.Editor ed = prefs.edit();
                 if (prefs.getBoolean("antwortcheck", false)) {//Service l�uft

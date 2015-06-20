@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
@@ -28,24 +27,29 @@ import java.net.URL;
 /**
  * Created by shabana on 6/17/15.
  */
-public class ServiceAntworten extends Service {
+public class ServiceQuestion extends Service {
     private static final String DEBUG_TAG = "gmf-debug";
     Details url_details=new Details();
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate();
 
+    public void onCreate() {
+        Log.d(DEBUG_TAG, System.currentTimeMillis()
+                + ": Frageservice erstellt.");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(DEBUG_TAG, System.currentTimeMillis()
-                + ": Antwortservice gestartet.");
+                + ": Frageservice gestartet.");
 
         // Unsere auszufuehrende Methode.
         loadData();
 
+        // Nachdem unsere Methode abgearbeitet wurde, soll sich der Service
+        // selbst stoppen.
 
+        // Um den Service laufen zu lassen, bis er explizit gestoppt wird,
+        // geben wir "START_STICKY" zurueck.
         return START_STICKY;
     }
 
@@ -66,8 +70,9 @@ public class ServiceAntworten extends Service {
 
 
     private void benachrichtige(String titel, String description) {
+        Log.d(DEBUG_TAG, "Fragenservice: anwender benachrichtigt");
         // TODO Auto-generated method stub
-        int mId = 123;
+        int mId = 13;
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.launchericon)
@@ -91,23 +96,23 @@ public class ServiceAntworten extends Service {
                         0,
                         PendingIntent.FLAG_UPDATE_CURRENT
                 );
+
         mBuilder.setContentIntent(resultPendingIntent);
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         // mId allows you to update the notification later on.
+
         mNotificationManager.notify(mId, mBuilder.build());
     }
-
-
 
     @Override
     public void onDestroy() {
         Log.d(DEBUG_TAG, System.currentTimeMillis()
-                + ": Antwortservice zerstoert.");
+                + ": Frageservice zerstoert.");
     }
 
     @Override
-    public IBinder onBind(Intent intent) {
+    public IBinder onBind(Intent arg0) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -117,10 +122,9 @@ public class ServiceAntworten extends Service {
         @Override
         protected String doInBackground(String... arg0) {
             try {
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ServiceAntworten.this);
-                String username = prefs.getString("username", "Error loading Username");
-                Log.d(DEBUG_TAG, "Username: " + username);
-                URL url = new URL(url_details.getAnswers());
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ServiceQuestion.this);
+                SharedPreferences.Editor ed = prefs.edit();
+                URL url = new URL(url_details.getQuestions());
                 XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(false);
                 XmlPullParser xpp = factory.newPullParser();
@@ -134,7 +138,8 @@ public class ServiceAntworten extends Service {
                 String description = "";
                 String time ="";
                 String link ="";
-                String autor = "";
+                String[] temp;
+                Integer id = 0;
                 // Returns the type of current event: START_TAG, END_TAG, etc..
                 int eventType = xpp.getEventType();
                 while (eventType != XmlPullParser.END_DOCUMENT) {
@@ -144,7 +149,7 @@ public class ServiceAntworten extends Service {
                         if (xpp.getName().equalsIgnoreCase("item")) {
                             insideItem = true;
 
-                        } else if (xpp.getName().equalsIgnoreCase("title")) {
+                        } else if (xpp.getName().equalsIgnoreCase("titel")) {
                             if (insideItem){
                                 titel = xpp.nextText();
 
@@ -165,38 +170,27 @@ public class ServiceAntworten extends Service {
                         }else if (xpp.getName().equalsIgnoreCase("link")) {
                             if (insideItem){
                                 link = xpp.nextText();
-
-                            }
-
-                        }else if (xpp.getName().equalsIgnoreCase("qauthor") ) {
-                            if (insideItem){
-                                autor = xpp.nextText();
-                                Log.d(DEBUG_TAG, autor);
-                                if (autor.equals(username))
-                                {
-                                    String temp = link.substring(link.length()-5, link.length()-1);
-                                    Log.d(DEBUG_TAG, "ID entspricht " + temp);
-                                    Log.d(DEBUG_TAG, "gespeicherter Wert: " + String.valueOf(prefs.getInt("lastAntwortID", 0)));
-
-                                    if ((Integer.parseInt(temp.trim())) > (prefs.getInt("lastAntwortID", 0))){	//neuer als letzte Antwort ID
-
-                                        if (prefs.getBoolean("antwortcheck", false)) {
-                                            benachrichtige("New Answer", "Your question has been answered!");
-                                        }
-                                        SharedPreferences.Editor ed = prefs.edit();
-                                        ed.putInt("lastAntwortID", Integer.parseInt(temp));	//neue ID merken
-                                        ed.commit();
-
-                                        break;
-                                    }else{
-                                        Log.d(DEBUG_TAG, "Keine Neuigkeit, beende Verarbeitung");
-                                        break;
+                                temp = link.split("/");
+                                id = Integer.parseInt(temp[3]);
+                                Log.d(DEBUG_TAG, "Frage id" + String.valueOf(id) + ", gespeicherte ID: "+ prefs.getInt("lastFragenId", 0));
+                                if (id > prefs.getInt("lastFragenId", 0)){
+                                    Log.d(DEBUG_TAG, "Neue Frage vorhanden" );
+                                    if (prefs.getBoolean("fragencheck", false)) {
+                                        benachrichtige("Neue Frage auf GMF", "Hier klicken");
                                     }
-
+                                    ed.putInt("lastFragenId", id);
+                                    ed.commit();
+                                    break;
+                                }else{	//keine neue Frage
+                                    Log.d(DEBUG_TAG, "Keine neue Frage, beende Verarbeitung");
+                                    break;
                                 }
+
                             }
 
                         }
+
+
                     }else if(eventType==XmlPullParser.END_TAG && xpp.getName().equalsIgnoreCase("item")){
                         insideItem=false;
                     }

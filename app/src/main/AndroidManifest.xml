@@ -35,10 +35,10 @@
             android:label="@string/title_activity_settings" >
         </activity>
 
-        <service android:name=".ServiceFragen" >
+        <service android:name=".ServiceQuestion" >
         </service>
 
-        <service android:name=".ServiceAntworten" >
+        <service android:name=".ServiceAnswer" >
         </service>
 
         <receiver

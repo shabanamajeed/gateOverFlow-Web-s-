@@ -80,7 +80,7 @@ public class rssFeed_Tab extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragen);
+        setContentView(R.layout.activity_question);
         Intent intent = new Intent();
         intent.setAction("de.arjun.servicestarten");
         sendBroadcast(intent);
@@ -107,20 +107,30 @@ public class rssFeed_Tab extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_fragen, menu);
+        getMenuInflater().inflate(R.menu.activity_rss, menu);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection  for layout see activity_fragen.xml
+        // Handle item selection  for layout see activity_questionon.xml
         switch (item.getItemId()) {
-            case R.id.aktualisieren:
+            case R.id.update:
                 async();
                 return true;
-            case R.id.impressum:
+            case R.id.rssactivityfeed:
                 startActivity tabAct = (startActivity)getParent();
-                tabAct.setURL(url_details.getQa());
+                tabAct.setURL(url_details.getRss_activity());
                 tabAct.getTabHost().setCurrentTab(0);
+                return true;
+            case R.id.rssquestionfeed:
+                startActivity tabActa = (startActivity)getParent();
+                tabActa.setURL(url_details.getRss());
+                tabActa.getTabHost().setCurrentTab(0);
+                return true;
+            case R.id.rssanswerfeed:
+                startActivity tabAct1 = (startActivity)getParent();
+                tabAct1.setURL(url_details.getRss_answers());
+                tabAct1.getTabHost().setCurrentTab(0);
                 return true;
             case R.id.setting:
                 Intent i = new Intent(rssFeed_Tab.this, SettingsActivity.class);

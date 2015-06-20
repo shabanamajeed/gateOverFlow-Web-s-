@@ -25,13 +25,13 @@ public class Servicestarter extends BroadcastReceiver {
         AlarmManager am = (AlarmManager) context
                 .getSystemService(Context.ALARM_SERVICE);
         Intent antwortintent = new Intent(context,
-                ServiceAntworten.class);
+                ServiceAnswer.class);
         PendingIntent antwortenpendingintent = PendingIntent.getService(
                 context, 0, antwortintent, 0);
         long intervalantworten = DateUtils.MINUTE_IN_MILLIS * time;
 
         Intent fragenintent = new Intent(context,
-                ServiceFragen.class);
+                ServiceQuestion.class);
         PendingIntent fragenpendingintent = PendingIntent.getService(
                 context, 0, fragenintent, 0);
         AlarmManager am2 = (AlarmManager) context

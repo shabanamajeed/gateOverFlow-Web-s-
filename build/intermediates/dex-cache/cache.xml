@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/home/shabana/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jar="/home/arjun/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/shabana/android-Projects/gateOverFlow-Web/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-0905fdecd587577c9ec92acf8bcbb162904ccd3e.jar" />
+        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-28b0df7d7bc8f52bf1f38cbeab4899fbd8870b4d.jar" />
     </item>
     <item
-        jar="/home/shabana/android-Projects/gateOverFlow-Web/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/shabana/android-Projects/gateOverFlow-Web/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-97fdd0a9df9e06fafb5e1ba73b9591b9bdb2c19c.jar" />
-    </item>
-    <item
-        jar="/home/shabana/android-Projects/gateOverFlow-Web/app/libs/jsoup-1.7.2.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="872693211fd68d1c4e116cf90021603207725e19">
-        <dex dex="/home/shabana/android-Projects/gateOverFlow-Web/app/build/intermediates/pre-dexed/debug/jsoup-1.7.2-5fea7d2868f6beec60ca9a7fbdb0f0ecc9f9456f.jar" />
-    </item>
-    <item
-        jar="/home/shabana/android-Projects/gateOverFlow-Web/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/shabana/android-Projects/gateOverFlow-Web/app/build/intermediates/pre-dexed/debug/classes-f8428a80378c07415d99c1ba6fb4091a4c8f966a.jar" />
+        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-4bb883c70dba18c0bc48141717d07692109122e8.jar" />
     </item>
     <item
-        jar="/home/shabana/android-Projects/gateOverFlow-Web/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jar="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-513e6d824dcf5dbcf1fca722ec063697c2e89db5.jar" />
+    </item>
+    <item
+        jar="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/shabana/android-Projects/gateOverFlow-Web/app/build/intermediates/pre-dexed/debug/classes-762332f3d87397e8c02fa143a0dee4385dd8668e.jar" />
+        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-87593048031fa408995dcc8678adeba74f1ca65d.jar" />
+    </item>
+    <item
+        jar="/home/arjun/gateOverFlow-Web-s-/app/libs/jsoup-1.7.2.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="872693211fd68d1c4e116cf90021603207725e19">
+        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/jsoup-1.7.2-5e1ef598ca638d77f8794f514381da28056acd83.jar" />
     </item>
 
 </items>

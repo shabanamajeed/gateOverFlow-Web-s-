@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/update" android:title="Update"></item>
+    <item android:id="@+id/rssquestionfeed" android:title="Question Feed"></item>
+    <item android:id="@+id/rssanswerfeed" android:title="Answer Feed"></item>
+    <item android:id="@+id/rssactivityfeed" android:title="All Activity Feed"></item>
+    <item android:id="@+id/setting" android:title="Settings"></item>
+
+
+</menu>
