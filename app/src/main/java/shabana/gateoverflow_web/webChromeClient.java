@@ -28,7 +28,8 @@ public class webChromeClient extends WebChromeClient {
     }
     public void onProgressChanged(WebView view, int progress)   //for showing progress bar
     {
-        if (progress < 100) {
+        // issue fix by shabana progress bar multiple times removal
+        if (progress < 100 && progressbar.getVisibility()==View.VISIBLE) {
             // still loading
             progressbar.setVisibility(View.VISIBLE);
         } else {

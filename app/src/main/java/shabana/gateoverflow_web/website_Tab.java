@@ -42,9 +42,10 @@ public class website_Tab extends Activity {
        // wv1.loadUrl(url_Details.getMain_Page());
 
         // for overriding urlloading and filechooser
-        wv1.setWebViewClient(new WebViewClient());
         final Activity MyActivity = this;
         final ProgressBar progress = (ProgressBar) findViewById(R.id.progressBar1);
+        // issue fix by shabana progress bar multiple times removal
+        wv1.setWebViewClient(new webClient(progress));
         wv1.setWebChromeClient(new webChromeClient(progress, MyActivity));}
 
     //this will be called when user has selected the image
@@ -127,7 +128,7 @@ public class website_Tab extends Activity {
         }
     }
 
-    final Activity MyActivity = this;
+   /* final Activity MyActivity = this;
     private class MyWebViewClient extends WebViewClient {
 
 
@@ -141,7 +142,7 @@ public class website_Tab extends Activity {
 
         }
 
-    }
+    }*/    // dont need this it is unused till now
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

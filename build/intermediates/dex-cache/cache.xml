@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/home/arjun/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-28b0df7d7bc8f52bf1f38cbeab4899fbd8870b4d.jar" />
-    </item>
-    <item
-        jar="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-4bb883c70dba18c0bc48141717d07692109122e8.jar" />
-    </item>
-    <item
-        jar="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-513e6d824dcf5dbcf1fca722ec063697c2e89db5.jar" />
-    </item>
-    <item
-        jar="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-87593048031fa408995dcc8678adeba74f1ca65d.jar" />
-    </item>
-    <item
-        jar="/home/arjun/gateOverFlow-Web-s-/app/libs/jsoup-1.7.2.jar"
+        jar="/home/shabana/gateOverFlow-Web-s-/app/libs/jsoup-1.7.2.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="872693211fd68d1c4e116cf90021603207725e19">
-        <dex dex="/home/arjun/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/jsoup-1.7.2-5e1ef598ca638d77f8794f514381da28056acd83.jar" />
+        <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/jsoup-1.7.2-ebb7bda0b0cd2b8785e945964ef315e52543a295.jar" />
+    </item>
+    <item
+        jar="/home/shabana/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-0905fdecd587577c9ec92acf8bcbb162904ccd3e.jar" />
+    </item>
+    <item
+        jar="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-3ad9a99d87447546126fe867f098c0c4ee9a1328.jar" />
+    </item>
+    <item
+        jar="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-4fb275c64f5d2e14baee86f545590a0e78b7f6cd.jar" />
+    </item>
+    <item
+        jar="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-45041f350c42f4b7d9d95929e31bc29cf1ffbd9f.jar" />
     </item>
 
 </items>
