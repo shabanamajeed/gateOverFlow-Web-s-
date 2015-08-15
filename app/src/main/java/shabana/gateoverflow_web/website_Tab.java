@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -26,6 +28,7 @@ public class website_Tab extends Activity {
     private ValueCallback<Uri> mUploadMessage;
     private final static int FILECHOOSER_RESULTCODE=1;
     private Details url_Details = new Details();
+    boolean isFileselect=false;
 
 
     //when activity gets started oncreate gets call
@@ -43,11 +46,53 @@ public class website_Tab extends Activity {
 
         // for overriding urlloading and filechooser
         final Activity MyActivity = this;
-        final ProgressBar progress = (ProgressBar) findViewById(R.id.progressBar1);
+        final ProgressBar progressbar = (ProgressBar) findViewById(R.id.progressBar1);
         // issue fix by shabana progress bar multiple times removal
-        wv1.setWebViewClient(new webClient(progress));
-        wv1.setWebChromeClient(new webChromeClient(progress, MyActivity));}
+        wv1.setWebViewClient(new webClient(progressbar));
+        wv1.setWebChromeClient(new WebChromeClient() {
 
+            public void onProgressChanged(WebView view, int progress)   //for showing progress bar
+            {
+                // issue fix by shabana progress bar multiple times removal
+                if (progress < 100 && progressbar.getVisibility() == View.VISIBLE) {
+                    // still loading
+                    progressbar.setVisibility(View.VISIBLE);
+                } else {
+                    // completely loaded page
+                    progressbar.setVisibility(View.GONE);
+                }
+
+                progressbar.setProgress(progress);
+            }
+
+            public void openFileChooser(ValueCallback<Uri> uploadMsg) {
+
+                selectImage(uploadMsg);
+
+            }
+
+            // For Android 3.0+
+            public void openFileChooser(ValueCallback uploadMsg, String acceptType) {
+                selectImage(uploadMsg);
+            }
+
+            //For Android 4.1 + 5 emulator
+            public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
+                selectImage(uploadMsg);
+
+            }
+
+            public void selectImage(ValueCallback<Uri> uploadMsg) {
+                mUploadMessage = uploadMsg;
+                Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+                i.addCategory(Intent.CATEGORY_OPENABLE);
+                i.setType("*/*");
+                startActivityForResult(Intent.createChooser(i, "File Chooser"), FILECHOOSER_RESULTCODE);
+                isFileselect=true;
+
+            }
+        });
+    }
     //this will be called when user has selected the image
 
     @Override
@@ -159,10 +204,14 @@ public class website_Tab extends Activity {
 
     protected void onResume(){
         super.onResume();
-        WebView wv1 = (WebView)findViewById(R.id.webView1);
-        startActivity tabAct = (startActivity)getParent();
-        String url =  tabAct.getURL();
-        wv1.loadUrl(url);
+        if(!(isFileselect)) {
+        // shabana for issue filechooser not opening
+        //if returned from file selection then should not reload page as it removes file selected
+            WebView wv1 = (WebView) findViewById(R.id.webView1);
+            startActivity tabAct = (startActivity) getParent();
+            String url = tabAct.getURL();
+            wv1.loadUrl(url);
+        }
     }
 
     protected void onPause(){

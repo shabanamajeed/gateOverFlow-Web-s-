@@ -9,7 +9,7 @@ public class Details {
     String time;
     String autor;
 
-    //Store URL on global basis
+      //Store URL on global basis
     final String site_name="http://gateoverflow.in";
     String main_Page=site_name+"/qa";
     String questions=site_name+"/questions";

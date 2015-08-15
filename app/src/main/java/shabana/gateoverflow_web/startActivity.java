@@ -17,7 +17,7 @@ import android.widget.TabHost;
 public class startActivity extends TabActivity {
 
 
-   // String url = "http://postimage.org/";
+   //String url = "http://postimage.org/";
     String url=new Details().getMain_Page();
 
     @SuppressWarnings("deprecation")

@@ -16,13 +16,6 @@
         <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-0905fdecd587577c9ec92acf8bcbb162904ccd3e.jar" />
     </item>
     <item
-        jar="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-3ad9a99d87447546126fe867f098c0c4ee9a1328.jar" />
-    </item>
-    <item
         jar="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
@@ -35,6 +28,13 @@
         revision="23.0.0 rc2"
         sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
         <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-45041f350c42f4b7d9d95929e31bc29cf1ffbd9f.jar" />
+    </item>
+    <item
+        jar="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/shabana/gateOverFlow-Web-s-/app/build/intermediates/pre-dexed/debug/classes-3ad9a99d87447546126fe867f098c0c4ee9a1328.jar" />
     </item>
 
 </items>
